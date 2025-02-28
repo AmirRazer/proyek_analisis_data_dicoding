@@ -16,14 +16,18 @@ st.title('Dashboard')
 st.sidebar.title('Sidebar')
 st.sidebar.image('dashboard/toko.jpg', use_column_width=True)
 
-# Year range filter
-min_year = int(all_data['order_purchase_timestamp'].min()[:4])
-max_year = int(all_data['order_purchase_timestamp'].max()[:4])
-year_range = st.sidebar.slider('Select Year Range', min_year, max_year, (min_year, max_year))
+# Date range filter
+min_date = all_data['order_purchase_timestamp'].min()
+max_date = all_data['order_purchase_timestamp'].max()
+start_date, end_date = st.sidebar.date_input('Select Date Range', [pd.to_datetime(min_date), pd.to_datetime(max_date)])
 
-# Filter data based on the selected year range
-all_data['order_year'] = pd.to_datetime(all_data['order_purchase_timestamp']).dt.year
-filtered_data = all_data[(all_data['order_year'] >= year_range[0]) & (all_data['order_year'] <= year_range[1])]
+# Convert date objects to datetime
+start_date = pd.to_datetime(start_date)
+end_date = pd.to_datetime(end_date)
+
+# Filter data based on the selected date range
+all_data['order_purchase_timestamp'] = pd.to_datetime(all_data['order_purchase_timestamp'])
+filtered_data = all_data[(all_data['order_purchase_timestamp'] >= start_date) & (all_data['order_purchase_timestamp'] <= end_date)]
 
 # Payment Type Plot
 st.subheader('Payment Type')

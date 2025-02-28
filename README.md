@@ -1,5 +1,12 @@
 ## Proyek Analisis Data Ecomerce Public Data Set
 
+## Setup
+```
+pip install -r requirements.txt
+cd dashboard
+streamlit run dashboard.py
+```
+
 Jenis Pembayaran apa yang sering digunakan Customer?<br>
 Bagaimana Status pengiriman?<br>
 Bagaimana Rating penjualan ?<br>
