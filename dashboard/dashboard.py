@@ -14,7 +14,7 @@ st.title('Dashboard')
 
 # Sidebar
 st.sidebar.title('Sidebar')
-st.sidebar.image('toko.jpg', use_column_width=True)
+st.sidebar.image('dashboard/toko.jpg', use_column_width=True)
 
 # Year range filter
 min_year = int(all_data['order_purchase_timestamp'].min()[:4])
