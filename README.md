@@ -1,5 +1,5 @@
 ## Proyek Analisis Data Ecomerce Public Data Set
-
+web https://wxzpdfv9av52mohdvf8vmf.streamlit.app/
 ## Setup
 ```
 pip install -r requirements.txt
