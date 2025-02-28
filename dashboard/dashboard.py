@@ -6,8 +6,8 @@ import folium
 from streamlit_folium import folium_static
 
 # Load your data
-all_data = pd.read_csv('all_data.csv')
-geolocation_df = pd.read_csv('geolocation_dataset.csv')  # Update the path to your geolocation data
+all_data = pd.read_csv('dashboard/all_data.csv')
+geolocation_df = pd.read_csv('dashboard/geolocation_dataset.csv')  # Update the path to your geolocation data
 
 # Streamlit app
 st.title('Dashboard')
